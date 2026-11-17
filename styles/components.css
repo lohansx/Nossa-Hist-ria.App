@@ -1,0 +1,1086 @@
+/* ===================================================================
+   NOSSA HISTÓRIA ❤️ - Componentes e Telas Específicas (components.css)
+   =================================================================== */
+
+/* -------------------------------------------------------------------
+   1. HERO / DASHBOARD DA TELA INICIAL
+   ------------------------------------------------------------------- */
+.hero-section {
+  padding: 2.2rem 0 1.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.romantic-banner {
+  background: linear-gradient(135deg, var(--wine-900), var(--wine-800) 60%, var(--wine-700));
+  border-radius: var(--radius-xl);
+  padding: 2.4rem 1.8rem;
+  color: var(--white);
+  box-shadow: 0 18px 45px rgba(51, 10, 18, 0.22);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(221, 117, 140, 0.25);
+}
+
+.romantic-banner::before {
+  content: "";
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(221, 117, 140, 0.28), transparent 70%);
+  border-radius: var(--radius-full);
+}
+
+.banner-content {
+  position: relative;
+  z-index: 2;
+  max-width: 820px;
+}
+
+.couple-names-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(8px);
+  padding: 0.35rem 0.9rem;
+  border-radius: var(--radius-full);
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--blush-200);
+  margin-bottom: 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.couple-names-badge:hover {
+  background: rgba(255, 255, 255, 0.22);
+  color: var(--white);
+}
+
+.banner-title {
+  font-size: 2.2rem;
+  line-height: 1.15;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .banner-title {
+    font-size: 2.8rem;
+  }
+}
+
+.banner-subtitle {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--blush-200);
+  margin-bottom: 1.25rem;
+}
+
+.banner-quote {
+  font-size: 0.98rem;
+  color: rgba(255, 255, 255, 0.88);
+  max-width: 680px;
+  line-height: 1.6;
+  border-left: 3px solid var(--blush-400);
+  padding-left: 1rem;
+  margin-top: 1rem;
+}
+
+/* Painel de Estatísticas e Progresso */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.85rem;
+}
+
+@media (max-width: 640px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+}
+
+.stat-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.4rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(122, 26, 46, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all var(--transition-fast);
+}
+
+.stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(122, 26, 46, 0.18);
+}
+
+.stat-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.stat-icon.total {
+  background: var(--blush-100);
+  color: var(--wine-700);
+}
+
+.stat-icon.completed {
+  background: #E8F5E9;
+  color: #2E7D32;
+}
+
+.stat-icon.pending {
+  background: #FFF8E1;
+  color: #F57F17;
+}
+
+.stat-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-number {
+  font-family: var(--font-serif);
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: var(--wine-900);
+  line-height: 1.1;
+}
+
+.stat-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--gray-600);
+}
+
+/* Barra de Progresso do Casal */
+.progress-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 1.4rem 1.6rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(122, 26, 46, 0.09);
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.progress-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.progress-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.progress-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--wine-900);
+}
+
+.progress-percentage {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--wine-700);
+}
+
+.progress-bar-track {
+  height: 16px;
+  background: var(--blush-100);
+  border-radius: var(--radius-full);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--blush-200);
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--wine-700), var(--wine-500), var(--blush-500));
+  border-radius: var(--radius-full);
+  width: 0%;
+  transition: width 0.9s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+}
+
+.progress-bar-fill::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+  animation: shine 2.2s infinite;
+}
+
+@keyframes shine {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.progress-caption {
+  font-size: 0.84rem;
+  color: var(--gray-600);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Atalhos Rápidos da Home */
+.quick-shortcuts {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+}
+
+@media (max-width: 768px) {
+  .quick-shortcuts {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.shortcut-btn {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 1rem 0.9rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  text-align: center;
+  border: 1px solid rgba(122, 26, 46, 0.08);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-fast);
+  color: var(--wine-900);
+  font-weight: 600;
+  font-size: 0.86rem;
+}
+
+.shortcut-btn svg {
+  color: var(--wine-700);
+  width: 26px;
+  height: 26px;
+  transition: transform var(--transition-bounce);
+}
+
+.shortcut-btn:hover {
+  background: var(--blush-100);
+  transform: translateY(-3px);
+  border-color: var(--wine-400);
+  box-shadow: var(--shadow-md);
+}
+
+.shortcut-btn:hover svg {
+  transform: scale(1.15) rotate(-5deg);
+}
+
+/* -------------------------------------------------------------------
+   2. AGENDA DE EXPERIÊNCIAS (LISTA E CARDS DAS 25 ATIVIDADES)
+   ------------------------------------------------------------------- */
+.experiences-header {
+  margin: 1.5rem 0 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.section-title-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  color: var(--wine-900);
+}
+
+.section-subtitle {
+  color: var(--gray-600);
+  font-size: 0.92rem;
+}
+
+/* Barra de Filtros e Busca */
+.filters-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search-box {
+  position: relative;
+  flex: 1;
+  min-width: 240px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 0.95rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--gray-400);
+  pointer-events: none;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.7rem 1rem 0.7rem 2.6rem;
+  border-radius: var(--radius-full);
+  border: 1.5px solid var(--gray-200);
+  background: var(--white);
+  font-size: 0.88rem;
+  transition: all var(--transition-fast);
+}
+
+.search-input:focus {
+  border-color: var(--wine-600);
+  box-shadow: 0 0 0 4px rgba(122, 26, 46, 0.1);
+}
+
+.filter-pills {
+  display: flex;
+  gap: 0.4rem;
+  overflow-x: auto;
+  padding-bottom: 2px;
+}
+
+.filter-pill {
+  padding: 0.5rem 0.95rem;
+  border-radius: var(--radius-full);
+  font-size: 0.82rem;
+  font-weight: 600;
+  background: var(--white);
+  color: var(--gray-600);
+  border: 1px solid var(--gray-200);
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+}
+
+.filter-pill:hover {
+  background: var(--blush-100);
+  color: var(--wine-800);
+}
+
+.filter-pill.active {
+  background: var(--wine-800);
+  color: var(--white);
+  border-color: var(--wine-800);
+  box-shadow: 0 3px 10px rgba(122, 26, 46, 0.22);
+}
+
+/* Grid de Cards das Experiências */
+.experiences-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+@media (min-width: 720px) {
+  .experiences-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1080px) {
+  .experiences-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Card Individual de Experiência */
+.exp-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(122, 26, 46, 0.09);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.exp-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(122, 26, 46, 0.22);
+}
+
+.exp-card.status-concluida {
+  border-color: var(--status-done-border);
+  background: linear-gradient(180deg, #FFFFFF, var(--blush-50));
+}
+
+.exp-card.status-concluida::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: var(--wine-700);
+}
+
+.exp-card.status-planejada::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: var(--gold-500);
+}
+
+.exp-card-header {
+  padding: 1.25rem 1.25rem 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.exp-number-tag {
+  font-family: var(--font-serif);
+  font-weight: 800;
+  font-size: 0.88rem;
+  color: var(--wine-700);
+  background: var(--blush-100);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+}
+
+.exp-status-badge {
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 0.28rem 0.75rem;
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.exp-status-badge.pendente {
+  background: var(--status-pending-bg);
+  color: var(--status-pending-text);
+}
+
+.exp-status-badge.planejada {
+  background: var(--status-planned-bg);
+  color: var(--status-planned-text);
+  border: 1px solid var(--status-planned-border);
+}
+
+.exp-status-badge.concluida {
+  background: var(--status-done-bg);
+  color: var(--status-done-text);
+  border: 1px solid var(--status-done-border);
+}
+
+.exp-card-body {
+  padding: 0.75rem 1.25rem 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.exp-title {
+  font-size: 1.12rem;
+  line-height: 1.35;
+  color: var(--wine-900);
+}
+
+.exp-desc {
+  font-size: 0.88rem;
+  color: var(--gray-600);
+  line-height: 1.5;
+}
+
+/* Dica Romântica */
+.exp-tip-box {
+  background: var(--blush-100);
+  border-radius: var(--radius-md);
+  padding: 0.65rem 0.85rem;
+  font-size: 0.81rem;
+  color: var(--wine-800);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  border-left: 3px solid var(--wine-600);
+  margin-top: 0.2rem;
+}
+
+.exp-tip-box svg {
+  flex-shrink: 0;
+  color: var(--wine-600);
+  margin-top: 2px;
+}
+
+/* Indicadores de Data no Card */
+.exp-date-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--wine-800);
+  background: var(--blush-100);
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-full);
+  width: fit-content;
+}
+
+/* Faixa de Miniaturas de Fotos */
+.exp-photo-strip {
+  display: flex;
+  gap: 0.45rem;
+  margin-top: 0.35rem;
+  overflow-x: auto;
+  padding-bottom: 2px;
+}
+
+.exp-photo-thumb {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+  border: 1.5px solid var(--white);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  transition: transform var(--transition-fast);
+}
+
+.exp-photo-thumb:hover {
+  transform: scale(1.08);
+}
+
+.exp-card-footer {
+  padding: 0.85rem 1.25rem 1.15rem;
+  border-top: 1px solid var(--gray-100);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.btn-card-action {
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.48rem 0.85rem;
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all var(--transition-fast);
+}
+
+.btn-card-complete {
+  background: var(--wine-800);
+  color: var(--white);
+}
+
+.btn-card-complete:hover {
+  background: var(--wine-700);
+  transform: translateY(-2px);
+}
+
+.btn-card-complete.is-done {
+  background: var(--status-done-bg);
+  color: var(--wine-800);
+  border: 1px solid var(--status-done-border);
+}
+
+/* -------------------------------------------------------------------
+   3. CALENDÁRIO DO CASAL
+   ------------------------------------------------------------------- */
+.calendar-wrapper {
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  padding: 1.8rem;
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(122, 26, 46, 0.09);
+  margin-top: 1rem;
+}
+
+.calendar-nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.calendar-month-title {
+  font-size: 1.5rem;
+  color: var(--wine-900);
+}
+
+.calendar-nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.calendar-grid-header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.82rem;
+  color: var(--wine-700);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.calendar-days-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  margin-top: 6px;
+}
+
+.calendar-day-cell {
+  min-height: 85px;
+  padding: 0.45rem;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  position: relative;
+}
+
+@media (max-width: 600px) {
+  .calendar-day-cell {
+    min-height: 58px;
+    padding: 0.3rem;
+  }
+}
+
+.calendar-day-cell:hover {
+  background: var(--blush-100);
+  border-color: var(--blush-300);
+}
+
+.calendar-day-cell.other-month {
+  opacity: 0.35;
+  background: var(--blush-50);
+}
+
+.calendar-day-cell.is-today {
+  border-color: var(--wine-600);
+  background: var(--blush-50);
+}
+
+.calendar-day-cell.is-today .day-number {
+  color: var(--wine-800);
+  font-weight: 800;
+}
+
+.calendar-day-cell.is-selected {
+  border-color: var(--wine-800);
+  box-shadow: 0 0 0 2px var(--wine-800);
+}
+
+.day-number {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--dark-800);
+}
+
+.day-events-indicators {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-top: 4px;
+}
+
+.calendar-event-pill {
+  font-size: 0.67rem;
+  font-weight: 600;
+  padding: 2px 5px;
+  border-radius: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.calendar-event-pill.done {
+  background: var(--status-done-bg);
+  color: var(--status-done-text);
+  border: 1px solid var(--status-done-border);
+}
+
+.calendar-event-pill.planned {
+  background: var(--status-planned-bg);
+  color: var(--status-planned-text);
+  border: 1px solid var(--status-planned-border);
+}
+
+/* -------------------------------------------------------------------
+   4. NOSSO MURAL DE MEMÓRIAS (GALERIA & ÁLBUM)
+   ------------------------------------------------------------------- */
+.memories-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin: 1.5rem 0 1.2rem;
+}
+
+.memories-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 680px) {
+  .memories-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .memories-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.memory-polaroid-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 1.1rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(122, 26, 46, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  transition: all var(--transition-normal);
+}
+
+.memory-polaroid-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.memory-image-container {
+  width: 100%;
+  aspect-ratio: 4/3;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  position: relative;
+  background: var(--blush-100);
+}
+
+.memory-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-normal);
+  cursor: pointer;
+}
+
+.memory-image:hover {
+  transform: scale(1.05);
+}
+
+.memory-date-tag {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background: rgba(31, 5, 10, 0.75);
+  color: var(--white);
+  backdrop-filter: blur(6px);
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.memory-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.memory-title {
+  font-size: 1.05rem;
+  color: var(--wine-900);
+  line-height: 1.25;
+}
+
+.memory-linked-badge {
+  font-size: 0.75rem;
+  color: var(--wine-600);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.memory-story {
+  font-size: 0.86rem;
+  color: var(--gray-600);
+  line-height: 1.5;
+}
+
+.memory-funny-quote {
+  background: var(--blush-100);
+  padding: 0.55rem 0.75rem;
+  border-radius: var(--radius-md);
+  font-size: 0.8rem;
+  color: var(--wine-800);
+  border-left: 2.5px solid var(--wine-500);
+}
+
+/* -------------------------------------------------------------------
+   5. SURPRESA DO DIA (ROULETTE / RANDOM PICKER)
+   ------------------------------------------------------------------- */
+.roulette-container {
+  max-width: 680px;
+  margin: 1.5rem auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.roulette-card-box {
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  padding: 2.5rem 2rem;
+  box-shadow: 0 20px 50px rgba(51, 10, 18, 0.12);
+  border: 2px solid var(--blush-300);
+  position: relative;
+  overflow: hidden;
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-normal);
+}
+
+.roulette-card-box.spinning {
+  animation: rouletteShake 0.4s infinite ease-in-out;
+  border-color: var(--wine-600);
+}
+
+@keyframes rouletteShake {
+  0% { transform: scale(1) rotate(0deg); }
+  25% { transform: scale(1.02) rotate(-1deg); }
+  75% { transform: scale(1.02) rotate(1deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+.roulette-number-badge {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--wine-700);
+  background: var(--blush-100);
+  padding: 0.4rem 1.1rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 1rem;
+}
+
+.roulette-title {
+  font-size: 1.7rem;
+  color: var(--wine-900);
+  margin-bottom: 0.8rem;
+  line-height: 1.25;
+}
+
+.roulette-desc {
+  font-size: 0.95rem;
+  color: var(--gray-600);
+  max-width: 520px;
+  margin-bottom: 1.2rem;
+  line-height: 1.6;
+}
+
+/* -------------------------------------------------------------------
+   6. NOSSA LINHA DO TEMPO
+   ------------------------------------------------------------------- */
+.timeline-stream {
+  position: relative;
+  max-width: 780px;
+  margin: 2rem auto;
+  padding: 1rem 0;
+}
+
+.timeline-stream::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 28px;
+  width: 3px;
+  background: linear-gradient(180deg, var(--wine-700), var(--blush-400), var(--blush-200));
+}
+
+@media (min-width: 768px) {
+  .timeline-stream::before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2.2rem;
+  display: flex;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 17px;
+  top: 18px;
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-full);
+  background: var(--wine-800);
+  border: 4px solid var(--white);
+  box-shadow: 0 0 0 2px var(--wine-600);
+  z-index: 2;
+}
+
+@media (min-width: 768px) {
+  .timeline-dot {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.timeline-card {
+  margin-left: 60px;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 1.4rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(122, 26, 46, 0.1);
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .timeline-item:nth-child(odd) .timeline-card {
+    margin-left: 0;
+    margin-right: calc(50% + 28px);
+    text-align: right;
+  }
+  .timeline-item:nth-child(even) .timeline-card {
+    margin-left: calc(50% + 28px);
+  }
+}
+
+/* -------------------------------------------------------------------
+   7. ESTADOS VAZIOS (EMPTY STATES)
+   ------------------------------------------------------------------- */
+.empty-state {
+  text-align: center;
+  padding: 3.5rem 1.5rem;
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  border: 1.5px dashed var(--blush-300);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9rem;
+  max-width: 520px;
+  margin: 1.5rem auto;
+}
+
+.empty-state-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-full);
+  background: var(--blush-100);
+  color: var(--wine-700);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.empty-state-title {
+  font-size: 1.25rem;
+  color: var(--wine-900);
+}
+
+.empty-state-text {
+  font-size: 0.88rem;
+  color: var(--gray-600);
+  max-width: 400px;
+}
+
+/* Lightbox de Imagem */
+.lightbox-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2100;
+  background: rgba(10, 2, 4, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-fast);
+}
+
+.lightbox-modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox-img {
+  max-width: 92vw;
+  max-height: 85vh;
+  border-radius: var(--radius-md);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  color: var(--white);
+  font-size: 2rem;
+  cursor: pointer;
+}

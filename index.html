@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Nossa História ❤️ | Agenda de Experiências para Casal</title>
+  <meta name="description" content="Colecionando momentos, construindo memórias. Agenda romântica e álbum de lembranças para o casal.">
+  <meta name="theme-color" content="#460E1A">
+
+  <!-- Fontes Google (Playfair Display + Plus Jakarta Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- PWA Manifest e Ícones -->
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="assets/icon-192.png">
+
+  <!-- Folhas de Estilo -->
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/components.css">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22%20%220%22%20%22100%22%20%22100%22><text y=%22.9em%22 font-size=%2290%22>❤️</text></svg>">
+</head>
+<body>
+
+  <!-- HEADER PRINCIPAL (DESKTOP E MOBILE) -->
+  <header class="main-header">
+    <div class="header-inner">
+      <a href="#home" class="brand-link" data-nav="home">
+        <div class="brand-logo-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+        </div>
+        <div class="brand-text-wrap">
+          <span class="brand-title">Nossa História</span>
+          <span class="brand-subtitle">Colecionando momentos</span>
+        </div>
+      </a>
+
+      <!-- Menu Desktop -->
+      <nav class="nav-desktop">
+        <a href="#home" class="nav-link active" data-nav="home">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          Início
+        </a>
+        <a href="#experiences" class="nav-link" data-nav="experiences">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          25 Experiências
+        </a>
+        <a href="#calendar" class="nav-link" data-nav="calendar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Calendário
+        </a>
+        <a href="#memories" class="nav-link" data-nav="memories">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+          Nossas Memórias
+        </a>
+        <a href="#roulette" class="nav-link" data-nav="roulette">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M16 12l-4-4-4 4M12 16V8"/></svg>
+          Surpresa do Dia
+        </a>
+        <a href="#timeline" class="nav-link" data-nav="timeline">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/><circle cx="12" cy="12" r="7"/></svg>
+          Linha do Tempo
+        </a>
+      </nav>
+
+      <!-- Ações do Header -->
+      <div class="header-actions">
+        <button class="btn-icon" id="open-settings-btn" title="Configurações e Backup">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- CONTAINER PRINCIPAL DO APLICATIVO -->
+  <main class="app-container">
+
+    <!-- ==============================================================
+         1. VIEW: TELA INICIAL (DASHBOARD)
+         ============================================================== -->
+    <section id="view-home" class="app-view">
+      <div class="hero-section">
+        <!-- Banner Romântico -->
+        <div class="romantic-banner">
+          <div class="banner-content">
+            <div class="couple-names-badge" id="hero-couple-badge" title="Clique para editar nossos nomes">
+              <span>💑</span> <span>Nós Dois</span> <span>✏️</span>
+            </div>
+            <h1 class="banner-title" id="hero-couple-title">Nossa História ❤️</h1>
+            <p class="banner-subtitle">"Colecionando momentos, construindo memórias."</p>
+            <blockquote class="banner-quote" id="hero-banner-quote">
+              "Não queremos apenas passar o tempo juntos. Queremos ter histórias para contar sobre ele."
+            </blockquote>
+          </div>
+        </div>
+
+        <!-- Grade de Contadores -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon total">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <div class="stat-details">
+              <span class="stat-number" id="stat-total-val">25</span>
+              <span class="stat-label">experiências disponíveis</span>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon completed">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            </div>
+            <div class="stat-details">
+              <span class="stat-number" id="stat-completed-val">00</span>
+              <span class="stat-label">experiências concluídas</span>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon pending">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
+            </div>
+            <div class="stat-details">
+              <span class="stat-number" id="stat-pending-val">25</span>
+              <span class="stat-label">esperando por nós</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Barra de Progresso do Casal -->
+        <div class="progress-card">
+          <div class="progress-header">
+            <div class="progress-title-wrap">
+              <span class="pulse-anim" style="color:var(--wine-600); font-size:1.3rem;">❤️</span>
+              <span class="progress-title">Nossa Jornada de Experiências</span>
+            </div>
+            <span class="progress-percentage" id="home-progress-percent">0%</span>
+          </div>
+
+          <div class="progress-bar-track">
+            <div class="progress-bar-fill" id="home-progress-fill"></div>
+          </div>
+
+          <div class="progress-caption" id="home-progress-caption">
+            <span>Nossa história está apenas começando...</span>
+            <span>25 esperando</span>
+          </div>
+        </div>
+
+        <!-- Atalhos Rápidos -->
+        <div class="quick-shortcuts">
+          <button class="shortcut-btn" onclick="window.app.navigate('roulette')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M16 12l-4-4-4 4M12 16V8"/></svg>
+            <span>Sortear Próximo Date</span>
+          </button>
+          <button class="shortcut-btn" onclick="window.app.navigate('experiences')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <span>Ver as 25 Experiências</span>
+          </button>
+          <button class="shortcut-btn" onclick="window.app.navigate('calendar')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <span>Abrir Calendário</span>
+          </button>
+          <button class="shortcut-btn" onclick="window.app.navigate('memories')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+            <span>Mural de Fotos</span>
+          </button>
+        </div>
+
+        <!-- Destaque: Próximo Encontro Agendado -->
+        <div class="panel-card" id="home-next-planned-card" style="padding:1.4rem; border-left:4px solid var(--gold-500);">
+          <!-- Preenchido via app.js -->
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==============================================================
+         2. VIEW: AGENDA DE EXPERIÊNCIAS (25 ITENS)
+         ============================================================== -->
+    <section id="view-experiences" class="app-view" style="display:none;">
+      <div class="experiences-header">
+        <div class="section-title-wrap">
+          <h2 class="section-title">Agenda de Experiências ❤️</h2>
+          <p class="section-subtitle">25 desafios e momentos únicos selecionados especialmente para nós dois vivermos juntos.</p>
+        </div>
+
+        <!-- Barra de Ferramentas: Busca e Filtros -->
+        <div class="filters-toolbar">
+          <div class="search-box">
+            <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+            <input type="text" class="search-input" id="exp-search-input" placeholder="Buscar experiência por nome, dica ou número...">
+          </div>
+
+          <div class="filter-pills">
+            <button class="filter-pill active" data-filter="todas">Todas (25)</button>
+            <button class="filter-pill" data-filter="pendente">Pendentes</button>
+            <button class="filter-pill" data-filter="planejada">Planejadas</button>
+            <button class="filter-pill" data-filter="concluida">Concluídas</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Grade dos 25 Cards -->
+      <div class="experiences-grid" id="experiences-grid">
+        <!-- Gerado dinamicamente pelo app.js -->
+      </div>
+    </section>
+
+
+    <!-- ==============================================================
+         3. VIEW: CALENDÁRIO DO CASAL
+         ============================================================== -->
+    <section id="view-calendar" class="app-view" style="display:none;">
+      <div class="experiences-header">
+        <div class="section-title-wrap">
+          <h2 class="section-title">Calendário do Casal 📅</h2>
+          <p class="section-subtitle">Escolha um dia especial para vivermos uma experiência e acompanhe nossos encontros planejados.</p>
+        </div>
+      </div>
+
+      <div class="calendar-wrapper">
+        <div class="calendar-nav-bar">
+          <h3 class="calendar-month-title" id="cal-month-title">Mês de Ano</h3>
+          <div class="calendar-nav-controls">
+            <button class="btn-subtle" id="cal-today-btn">Hoje</button>
+            <button class="btn-icon" id="cal-prev-month" title="Mês Anterior">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <button class="btn-icon" id="cal-next-month" title="Próximo Mês">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="calendar-grid-header">
+          <div>Dom</div><div>Seg</div><div>Ter</div><div>Qua</div><div>Qui</div><div>Sex</div><div>Sáb</div>
+        </div>
+
+        <div class="calendar-days-grid" id="cal-days-grid">
+          <!-- Gerado dinamicamente pelo calendar.js -->
+        </div>
+
+        <div style="display:flex; gap:1.2rem; align-items:center; margin-top:1.2rem; padding-top:0.9rem; border-top:1px solid var(--gray-200); font-size:0.82rem; color:var(--gray-600);">
+          <div style="display:flex; align-items:center; gap:0.4rem;">
+            <span style="display:inline-block; width:10px; height:10px; border-radius:50%; background:var(--gold-500);"></span>
+            <span>Date Planejado</span>
+          </div>
+          <div style="display:flex; align-items:center; gap:0.4rem;">
+            <span style="display:inline-block; width:10px; height:10px; border-radius:50%; background:var(--wine-700);"></span>
+            <span>Experiência Concluída</span>
+          </div>
+          <div style="margin-left:auto;">
+            <button class="btn-subtle" onclick="window.app.openScheduleModal()" style="font-size:0.8rem; padding:0.35rem 0.85rem;">
+              + Agendar Experiência
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==============================================================
+         4. VIEW: MURAL DE MEMÓRIAS
+         ============================================================== -->
+    <section id="view-memories" class="app-view" style="display:none;">
+      <div class="experiences-header">
+        <div class="section-title-wrap">
+          <h2 class="section-title">Nosso Mural de Memórias 📸</h2>
+          <p class="section-subtitle">O álbum digital da nossa história. Fotos, sensações, risadas e memórias de cada date que vivemos.</p>
+        </div>
+
+        <div class="memories-toolbar">
+          <span class="badge" id="memories-count-badge" style="background:var(--blush-100); color:var(--wine-800); font-size:0.85rem; padding:0.4rem 0.9rem; border-radius:var(--radius-full); font-weight:700;">
+            0 registros
+          </span>
+
+          <button class="btn-primary" id="open-add-memory-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Adicionar Foto & Relato
+          </button>
+        </div>
+      </div>
+
+      <div class="memories-grid" id="memories-grid">
+        <!-- Gerado dinamicamente pelo gallery.js -->
+      </div>
+    </section>
+
+
+    <!-- ==============================================================
+         5. VIEW: SURPRESA DO DIA (ROULETTE)
+         ============================================================== -->
+    <section id="view-roulette" class="app-view" style="display:none;">
+      <div class="roulette-container">
+        <div>
+          <h2 class="section-title">Escolha Nosso Próximo Momento 🎲</h2>
+          <p class="section-subtitle" style="margin-top:0.3rem;">Deixem a sorte guiar o próximo date! Selecionamos aleatoriamente uma experiência que ainda não vivemos.</p>
+        </div>
+
+        <div class="roulette-card-box" id="roulette-card-box">
+          <span class="roulette-number-badge" id="roulette-number-badge">Prontos para a surpresa?</span>
+          <h3 class="roulette-title" id="roulette-title">O que vamos viver hoje?</h3>
+          <p class="roulette-desc" id="roulette-desc">Clique no botão abaixo para sortear um dos desafios românticos pendentes da nossa agenda.</p>
+          <div id="roulette-tip"></div>
+
+          <div style="display:flex; flex-wrap:wrap; gap:0.6rem; justify-content:center; margin-top:1.4rem; display:none;" id="roulette-actions-row">
+            <button class="btn-secondary" id="roulette-schedule-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              Adicionar ao Calendário
+            </button>
+            <button class="btn-primary" id="roulette-complete-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              Registrar / Concluir
+            </button>
+          </div>
+        </div>
+
+        <div>
+          <button class="btn-primary" id="roulette-spin-btn" style="padding:0.9rem 2.2rem; font-size:1.05rem;">
+            <span>🎲</span> Sortear Experiência
+          </button>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==============================================================
+         6. VIEW: NOSSA LINHA DO TEMPO
+         ============================================================== -->
+    <section id="view-timeline" class="app-view" style="display:none;">
+      <div class="experiences-header">
+        <div class="section-title-wrap">
+          <h2 class="section-title">Nossa Linha do Tempo ⏳</h2>
+          <p class="section-subtitle">A história viva de todos os momentos especiais que já realizamos juntos, em ordem cronológica.</p>
+        </div>
+        <span class="badge" id="timeline-count-badge" style="background:var(--blush-100); color:var(--wine-800); font-size:0.85rem; padding:0.4rem 0.9rem; border-radius:var(--radius-full); font-weight:700; width:fit-content;">
+          0 momentos vividos
+        </span>
+      </div>
+
+      <div class="timeline-stream" id="timeline-stream">
+        <!-- Gerado dinamicamente pelo timeline.js -->
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ==============================================================
+       BARRA DE NAVEGAÇÃO INFERIOR (MOBILE)
+       ============================================================== -->
+  <nav class="mobile-bottom-nav">
+    <a href="#home" class="mobile-nav-item active" data-nav="home">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <span>Início</span>
+    </a>
+    <a href="#experiences" class="mobile-nav-item" data-nav="experiences">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      <span>25 Dates</span>
+    </a>
+    <a href="#calendar" class="mobile-nav-item" data-nav="calendar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      <span>Agenda</span>
+    </a>
+    <a href="#memories" class="mobile-nav-item" data-nav="memories">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+      <span>Fotos</span>
+    </a>
+    <a href="#roulette" class="mobile-nav-item" data-nav="roulette">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M16 12l-4-4-4 4M12 16V8"/></svg>
+      <span>Surpresa</span>
+    </a>
+  </nav>
+
+
+  <!-- ==============================================================
+       MODAIS DO APLICATIVO
+       ============================================================== -->
+
+  <!-- 1. Modal de Detalhes da Experiência (Edição, Fotos, Relato, Status) -->
+  <div class="modal-backdrop" id="experience-details-modal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div>
+          <span id="exp-modal-number" style="font-size:0.78rem; font-weight:800; color:var(--wine-700); text-transform:uppercase;">#01</span>
+          <h3 class="modal-title" id="exp-modal-title" style="margin-top:2px;">Nome da Experiência</h3>
+        </div>
+        <button class="btn-icon close-modal-btn">×</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="form-group">
+          <label class="form-label">Status da Atividade</label>
+          <select class="form-select" id="exp-modal-status-select">
+            <option value="pendente">Pendente (Ainda não vivemos)</option>
+            <option value="planejada">Planejada (Data agendada)</option>
+            <option value="concluida">Concluída ❤️ (Já realizamos)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Data em que foi realizada</label>
+          <input type="date" class="form-input" id="exp-modal-completed-date">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Observações & Como foi viver essa experiência</label>
+          <textarea class="form-textarea" id="exp-modal-notes" placeholder="Conte como vocês se sentiram, onde foram, o que comeram, o que conversaram..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Momentos engraçados ou especiais</label>
+          <textarea class="form-textarea" id="exp-modal-funny" style="min-height:60px;" placeholder="Aquela piada interna, um mico engraçado ou algo inesquecível..."></textarea>
+        </div>
+
+        <!-- Área de Fotos -->
+        <div class="form-group">
+          <label class="form-label">Fotos & Lembranças deste Encontro</label>
+          <input type="file" id="exp-modal-photo-file" accept="image/*" multiple style="display:none;">
+          <button type="button" class="btn-secondary" onclick="document.getElementById('exp-modal-photo-file').click()" style="width:fit-content;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            Selecionar Fotos do Celular / PC
+          </button>
+          <div id="exp-modal-photos-preview" style="display:flex; flex-wrap:wrap; gap:8px; margin-top:8px;"></div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn-subtle close-modal-btn">Cancelar</button>
+        <button class="btn-primary" id="save-experience-modal-btn">Salvar Experiência ❤️</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 2. Modal de Agendamento no Calendário -->
+  <div class="modal-backdrop" id="schedule-modal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title">Agendar Experiência no Calendário 📅</h3>
+        <button class="btn-icon close-modal-btn">×</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="form-group">
+          <label class="form-label">Escolha a Experiência</label>
+          <select class="form-select" id="schedule-experience-select"></select>
+        </div>
+
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.75rem;">
+          <div class="form-group">
+            <label class="form-label">Data do Encontro</label>
+            <input type="date" class="form-input" id="schedule-date-input">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Horário (Opcional)</label>
+            <input type="time" class="form-input" id="schedule-time-input" value="19:00">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Local ou Ponto de Encontro</label>
+          <input type="text" class="form-input" id="schedule-location-input" placeholder="Ex: Praia do Pôr do Sol, Nossa Cozinha, Mirante da Cidade">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Notas ou Lembretes Preparatórios</label>
+          <textarea class="form-textarea" id="schedule-notes-input" style="min-height:65px;" placeholder="Ex: Levar toalha xadrez, comprar o vinho com antecedência..."></textarea>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn-subtle close-modal-btn">Cancelar</button>
+        <button class="btn-primary" id="save-schedule-modal-btn">Confirmar Agendamento</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 3. Modal de Detalhes do Dia (Calendário) -->
+  <div class="modal-backdrop" id="day-details-modal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title" id="day-modal-title">Detalhes do Dia</h3>
+        <button class="btn-icon close-modal-btn">×</button>
+      </div>
+
+      <div class="modal-body">
+        <div id="day-modal-events-list"></div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn-subtle close-modal-btn">Fechar</button>
+        <button class="btn-primary" id="day-modal-schedule-btn">+ Agendar Neste Dia</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 4. Modal de Adicionar Memória Avulsa -->
+  <div class="modal-backdrop" id="add-memory-modal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title">Adicionar Nova Memória ao Mural 📸</h3>
+        <button class="btn-icon close-modal-btn">×</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="form-group">
+          <label class="form-label">Vincular a uma das 25 Experiências (Opcional)</label>
+          <select class="form-select" id="mem-experience-select"></select>
+        </div>
+
+        <div style="display:grid; grid-template-columns:2fr 1fr; gap:0.75rem;">
+          <div class="form-group">
+            <label class="form-label">Título da Memória</label>
+            <input type="text" class="form-input" id="mem-title-input" placeholder="Ex: Nosso Piquenique Incrível">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Data</label>
+            <input type="date" class="form-input" id="mem-date-input">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Como foi esse momento?</label>
+          <textarea class="form-textarea" id="mem-desc-input" placeholder="Conte os detalhes mais doces e especiais deste dia..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Momento Engraçado ou Marcante</label>
+          <input type="text" class="form-input" id="mem-funny-input" placeholder="Ex: Quase deixamos a cesta cair no mar!">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Fotografias</label>
+          <input type="file" id="mem-file-input" accept="image/*" multiple style="display:none;">
+          <button type="button" class="btn-secondary" onclick="document.getElementById('mem-file-input').click()" style="width:fit-content;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+            Escolher Fotos
+          </button>
+          <div id="mem-photo-preview-container" style="display:flex; flex-wrap:wrap; gap:8px; margin-top:8px;"></div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn-subtle close-modal-btn">Cancelar</button>
+        <button class="btn-primary" onclick="window.memoryGallery.saveNewMemory()">Guardar Memória ❤️</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 5. Modal de Configurações, Backup e Restauração -->
+  <div class="modal-backdrop" id="settings-modal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title">Configurações & Backup ⚙️</h3>
+        <button class="btn-icon close-modal-btn">×</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="form-group">
+          <label class="form-label">Nossos Nomes (Como chamar o casal)</label>
+          <input type="text" class="form-input" id="settings-names-input" placeholder="Ex: Lucas & Mariana">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Data de Início da Nossa História (Namoro / Casamento)</label>
+          <input type="date" class="form-input" id="settings-date-input">
+          <small style="color:var(--gray-600); font-size:0.78rem;">Usado para calcular os dias juntos na tela inicial.</small>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Frase Especial do Casal</label>
+          <textarea class="form-textarea" id="settings-quote-input" style="min-height:65px;"></textarea>
+        </div>
+
+        <hr style="border:none; border-top:1px solid var(--gray-200); margin:0.4rem 0;">
+
+        <!-- Seção de Backup e Restauração -->
+        <div>
+          <h4 style="font-size:1rem; color:var(--wine-900); margin-bottom:0.3rem;">Guardar e Sincronizar Memórias 💾</h4>
+          <p style="font-size:0.83rem; color:var(--gray-600); margin-bottom:0.7rem;">
+            Todas as suas informações e fotos ficam salvas com segurança no navegador. Baixe um arquivo de backup para guardar em segurança ou transferir para outro celular/computador.
+          </p>
+
+          <div style="display:flex; flex-wrap:wrap; gap:0.6rem;">
+            <button class="btn-secondary" id="export-backup-btn" style="font-size:0.84rem;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Baixar Backup Completo (JSON)
+            </button>
+
+            <input type="file" id="import-backup-file" accept=".json" style="display:none;">
+            <button class="btn-subtle" onclick="document.getElementById('import-backup-file').click()" style="font-size:0.84rem;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+              Restaurar de um Arquivo
+            </button>
+          </div>
+        </div>
+
+        <hr style="border:none; border-top:1px solid var(--gray-200); margin:0.4rem 0;">
+
+        <div>
+          <h4 style="font-size:1rem; color:#B91C1C; margin-bottom:0.3rem;">Zona de Cuidado</h4>
+          <button class="btn-outline-danger" id="reset-progress-btn">
+            Reiniciar Todas as 25 Atividades
+          </button>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn-subtle close-modal-btn">Fechar</button>
+        <button class="btn-primary" id="save-settings-btn">Salvar Alterações</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 6. Modal de Confirmação Genérica -->
+  <div class="modal-backdrop" id="confirm-action-modal">
+    <div class="modal-card" style="max-width:440px;">
+      <div class="modal-header">
+        <h3 class="modal-title" id="confirm-modal-title">Confirmação</h3>
+        <button class="btn-icon close-modal-btn">×</button>
+      </div>
+      <div class="modal-body">
+        <p id="confirm-modal-message" style="color:var(--dark-700); font-size:0.95rem;"></p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-subtle close-modal-btn">Cancelar</button>
+        <button class="btn-primary" id="confirm-modal-yes-btn" style="background:#B91C1C;">Confirmar</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 7. Lightbox de Imagem em Tela Cheia -->
+  <div class="lightbox-modal" id="lightbox-modal">
+    <span class="lightbox-close">&times;</span>
+    <img id="lightbox-img" class="lightbox-img" src="" alt="Foto expandida">
+    <div id="lightbox-caption" style="position:absolute; bottom:2rem; color:#fff; font-size:1.1rem; text-align:center; max-width:80%; font-family:var(--font-serif);"></div>
+  </div>
+
+
+  <!-- RODAPÉ -->
+  <footer class="main-footer">
+    <div class="footer-quote" id="footer-romantic-quote">
+      "Não queremos apenas passar o tempo juntos. Queremos ter histórias para contar sobre ele."
+    </div>
+    <div>Nossa História ❤️ &bull; Feito com amor para a vida inteira.</div>
+  </footer>
+
+  <!-- SCRIPTS DA APLICAÇÃO -->
+  <script src="scripts/data.js"></script>
+  <script src="scripts/db.js"></script>
+  <script src="scripts/calendar.js"></script>
+  <script src="scripts/gallery.js"></script>
+  <script src="scripts/roulette.js"></script>
+  <script src="scripts/timeline.js"></script>
+  <script src="scripts/app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator && window.location.protocol.startsWith('http')) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js').catch(err => console.log('SW reg error:', err));
+      });
+    }
+  </script>
+</body>
+</html>
